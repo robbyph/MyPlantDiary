@@ -11,12 +11,8 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.newSingleThreadContext
 import kotlinx.coroutines.test.resetMain
 import kotlinx.coroutines.test.setMain
-import org.junit.After
-import org.junit.Test
-
+import org.junit.*
 import org.junit.Assert.*
-import org.junit.Before
-import org.junit.Rule
 import org.junit.rules.TestRule
 import java.util.concurrent.CountDownLatch
 import java.util.concurrent.TimeUnit
@@ -68,7 +64,7 @@ class PlantUnitTests {
         var allPlants : List<Plant>? = ArrayList<Plant>()
         val latch = CountDownLatch(1)
         val observer = object : Observer<List<Plant>> {
-            override fun onChanged(receivedPlants: List<Plant>?){
+            override fun onChanged(receivedPlants: List<Plant>?) {
                 allPlants = receivedPlants
                 latch.countDown()
                 mvm.plants.removeObserver(this)

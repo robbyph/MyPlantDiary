@@ -7,7 +7,7 @@ import com.myplantdiary.v32001.dto.Plant
 import com.myplantdiary.v32001.service.PlantService
 import kotlinx.coroutines.launch
 
-class MainViewModel (var plantService : PlantService = PlantService()): ViewModel() {
+class MainViewModel (var plantService : PlantService = PlantService()) : ViewModel() {
     var plants : MutableLiveData<List<Plant>> = MutableLiveData<List<Plant>>()
 
     fun fetchPlants() {
